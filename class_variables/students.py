@@ -1,3 +1,7 @@
+# class variables-can be shared among all the objects within class 
+#                 they are common among all the objects not like instance variable which is different according to objects
+
+
 class Students:
 
     pass_year=2026
