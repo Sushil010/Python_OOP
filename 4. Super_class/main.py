@@ -14,6 +14,14 @@ class circle(Shape):
         super().__init__(color,is_filled)
         self.radius=radius
 
+    #method overriding  
+    def describe(self):
+        print(f"The area is {self.radius*self.radius*3.14} cm^2")
+        # accessing parent or super class even overriding the method:
+        super().describe()
+
+    
+
 class square(Shape):
     def __init__(self,color,is_filled,length):
         # self.color=color
@@ -44,4 +52,4 @@ Square=square("purple",True,90)
 
 
 Circle.describe()
-Triangle.describe()
+# Triangle.describe()
