@@ -30,6 +30,9 @@ class MainWindow(QMainWindow):
 
         # label.setAlignment(Qt.AlignHCenter | Qt.AlignVCenter)
         # label.setAlignment(Qt.AlignHCenter | Qt.AlignTop)
+
+        #for both horizontal and vertical alignment
+        label.setAlignment(Qt.AlignCenter)
     
 
 def main():
