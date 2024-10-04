@@ -1,6 +1,7 @@
 import sys
 from  PyQt5.QtWidgets import QApplication, QMainWindow, QLabel
 from PyQt5.QtGui import QFont
+from PyQt5.QtCore import Qt
 
 
 class MainWindow(QMainWindow):
@@ -13,8 +14,18 @@ class MainWindow(QMainWindow):
         label.setFont(QFont("Arial",20,True))
         label.setGeometry(0,0,500,500)
         label.setStyleSheet("color:green;"
-                       "background-color:#235054;")
+                       "background-color:#235054;"
+                       "font-style:italic;"
+                       "font-weight:bold;")
 
+        # label.setAlignment(Qt.AlignTop)
+        # label.setAlignment(Qt.AlignBottom)
+        # label.setAlignment(Qt.AlignVCenter)
+
+
+        # label.setAlignment(Qt.AlignRight)
+        label.setAlignment(Qt.AlignLeft)
+        # label.setAlignment(Qt.AlignHCenter)
 
 def main():
     app=QApplication(sys.argv)
