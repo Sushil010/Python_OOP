@@ -11,7 +11,9 @@ class MainWindow(QMainWindow):
 
         label=QLabel("Home",self)
         label.setFont(QFont("Arial",20,True))
-        label.setGeometry(0,0,100,100)
+        label.setGeometry(0,0,500,500)
+        label.setStyleSheet("color:green;"
+                       "background-color:#235054;")
 
 
 def main():
