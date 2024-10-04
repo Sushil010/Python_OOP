@@ -1,5 +1,6 @@
 import sys
-from  PyQt5.QtWidgets import QApplication, QMainWindow
+from  PyQt5.QtWidgets import QApplication, QMainWindow, QLabel
+from PyQt5.QtGui import QFont
 
 
 class MainWindow(QMainWindow):
@@ -8,6 +9,9 @@ class MainWindow(QMainWindow):
         self.setWindowTitle("First GUI")
         self.setGeometry(100,200,700,700)
 
+        label=QLabel("Home",self)
+        label.setFont(QFont("Arial",20,True))
+        label.setGeometry(0,0,100,100)
 
 
 def main():
