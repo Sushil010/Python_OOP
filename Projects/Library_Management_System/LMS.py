@@ -27,4 +27,30 @@ class Individual:
     def return_book(self, book_id):
         pass
 
+
+class Library:
+    def __init__(self,books,members):
+        self.bookss=books
+        self.members=members
     
+    def add_book(self,book_id):
+        pass
+
+    def remove_book(self,book_obj):
+        pass
+
+    def register_member(self,member_obj):
+        pass
+
+    def issue_book(self, book_id,member_id):
+        pass
+
+    def return_book(self, member_id, bokk_id):
+        pass
+
+    def list_available_books(self):
+        pass
+
+
+
+
