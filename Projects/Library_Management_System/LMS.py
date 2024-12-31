@@ -14,3 +14,17 @@ class Book:
     def update_copies(self):
         pass
 
+
+class Individual:
+    def __init__(self, name, member_id, borrowed_books):
+        self.name=name
+        self.member_id=member_id
+        self.borrowed_books=borrowed_books
+    
+    def borrow_books(self,book_id):
+        pass
+
+    def return_book(self, book_id):
+        pass
+
+    
