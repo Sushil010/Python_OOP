@@ -13,7 +13,10 @@ class Book:
         print(f"{self.id}. Book name is {self.title} and author is {self.author} with remaining copies {self.copies}")
 
     def update_copies(self):
-        pass
+        if self.copies>0:
+            self.copies-=1
+        else:
+            print("No more copies available")
 
 
 class Individual:
@@ -71,10 +74,7 @@ members=[
 ]
 
 
-Indi=[Individual(member['name'],member['id']) for member in members]
 
-for names in Indi:
-    names.display_stats()
 
 
 
@@ -90,3 +90,10 @@ book_obj=[Book(book["title"],book["author"],book["id"],book["copies"]) for book 
 # iteration inside method of this is redundant so iteration is done in this way
 for book in book_obj:
     book.display_details()
+
+
+
+Indi=[Individual(member['name'],member['id']) for member in members]
+
+for names in Indi:
+    names.display_stats()
