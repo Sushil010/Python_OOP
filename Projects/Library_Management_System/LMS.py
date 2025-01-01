@@ -49,8 +49,20 @@ class Library:
         pass
 
     def list_available_books(self):
-        pass
+        print(f"Available books are {self.books}")
 
 
 
-Lib=Library("id":1,"name":"Three body Problem")
+books=[
+    {"id":1,"title":"Three body Problem", "author":"Unknown"},
+    {"id":2,"title":"Harry Potter and the goblet of fire", "author":"JK.Rowling"}
+]
+
+members=[
+    {"id":1,"name":"Sushil Sharma"},
+    {"id":2,"name":"John Doe"}
+]
+
+
+Lib=Library(books,members)
+Lib.list_available_books()
