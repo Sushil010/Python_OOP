@@ -68,11 +68,14 @@ members=[
 ]
 
 
+# this library class consists of whole lists and objects passed within it so itertion is required within it's methods
 Lib=Library(books,members)
 Lib.list_available_books()
 
-# title,author,id,copies
+# only a specific portion of an object-list is passed so 
+
 book_obj=[Book(book["title"],book["author"],book["id"],book["copies"]) for book in books]
 
+# iteration inside method of this is redundant so iteration is done in this way
 for book in book_obj:
     book.display_details()
