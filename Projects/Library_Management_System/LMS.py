@@ -9,7 +9,8 @@ class Book:
     
     # changes--provide the book name according to id of the book
     def display_details(self):
-        print(f"Book name is {self.title} and author is {self.author}")
+        # print(f"Available book is {book[id]}. {book['title'] } by {book['author']} and remaining {book['copies']}")
+        print(f"{self.id}. Book name is {self.title} and author is {self.author} with remaining copies {self.copies}")
 
     def update_copies(self):
         pass
@@ -57,8 +58,8 @@ class Library:
 
 
 books=[
-    {"id":1,"title":"Three body Problem", "author":"Unknown"},
-    {"id":2,"title":"Harry Potter and the goblet of fire", "author":"JK.Rowling"}
+    {"id":1,"title":"Three body Problem", "author":"Unknown","copies":3},
+    {"id":2,"title":"Harry Potter and the goblet of fire", "author":"JK.Rowling","copies":5}
 ]
 
 members=[
@@ -69,3 +70,9 @@ members=[
 
 Lib=Library(books,members)
 Lib.list_available_books()
+
+# title,author,id,copies
+book_obj=[Book(book["title"],book["author"],book["id"],book["copies"]) for book in books]
+
+for book in book_obj:
+    book.display_details()
