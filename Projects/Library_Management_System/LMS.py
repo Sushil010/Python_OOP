@@ -17,10 +17,13 @@ class Book:
 
 
 class Individual:
-    def __init__(self, name, member_id, borrowed_books):
+    def __init__(self, name, member_id):
         self.name=name
         self.member_id=member_id
-        self.borrowed_books=borrowed_books
+        # self.borrowed_books=borrowed_books
+
+    def display_stats(self):
+        print(f"{self.name} has member_id {self.member_id}")
     
     def borrow_books(self,book_id):
         pass
@@ -66,6 +69,14 @@ members=[
     {"id":1,"name":"Sushil Sharma"},
     {"id":2,"name":"John Doe"}
 ]
+
+
+Indi=[Individual(member['name'],member['id']) for member in members]
+
+for names in Indi:
+    names.display_stats()
+
+
 
 
 # this library class consists of whole lists and objects passed within it so itertion is required within it's methods
