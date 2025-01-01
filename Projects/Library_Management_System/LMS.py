@@ -49,7 +49,10 @@ class Library:
         pass
 
     def list_available_books(self):
-        print(f"Available books are {self.books}")
+        for book in self.books:
+            print(f"{book['id']}. Title of book is {book['title']} written by {book['author']}")
+        
+        
 
 
 
