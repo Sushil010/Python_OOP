@@ -30,7 +30,7 @@ class Individual:
 
 class Library:
     def __init__(self,books,members):
-        self.bookss=books
+        self.books=books
         self.members=members
     
     def add_book(self,book_id):
@@ -53,4 +53,4 @@ class Library:
 
 
 
-
+Lib=Library("id":1,"name":"Three body Problem")
