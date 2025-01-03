@@ -11,24 +11,41 @@ WIN_WIDTH=800
 
 Bird_img=[
 
-pygame.transform.scale2x(
-pygame.image.load(os.path.join('Flap AI\imgs','bird1.png'))
-                        ),
+    pygame.transform.scale2x(
+    pygame.image.load(os.path.join('Flap AI\imgs','bird1.png'))
+                            ),
 
-pygame.transform.scale2x(
-pygame.image.load(os.path.join('Flap AI\imgs','bird1.png'))
-                        ),
+    pygame.transform.scale2x(
+    pygame.image.load(os.path.join('Flap AI\imgs','bird1.png'))
+                            ),
 
-pygame.transform.scale2x(
-pygame.image.load(os.path.join('Flap AI\imgs','bird1.png'))
-                        )
+    pygame.transform.scale2x(
+    pygame.image.load(os.path.join('Flap AI\imgs','bird1.png'))
+                            )
 
 ]
 
 Pipe_img=[
 
-pygame.transform.scale2x(
-pygame.image.load(os.path.join('Flap AI\imgs','pipe.png'))
-                        )
-                        
+    pygame.transform.scale2x(
+    pygame.image.load(os.path.join('Flap AI\imgs','pipe.png'))
+                            )
+
+]
+
+
+background_img=[
+
+    pygame.transform.scale2x(
+    pygame.image.load(os.path.join('Flap AI\imgs','bg.png'))
+                            )
+
+]
+
+base_img=[
+
+    pygame.transform.scale2x(
+    pygame.image.load(os.path.join('Flap AI\imgs','base.png'))
+                            )
+
 ]
