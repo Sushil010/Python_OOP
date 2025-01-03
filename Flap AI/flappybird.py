@@ -49,3 +49,29 @@ base_img=[
                             )
 
 ]
+
+
+
+class Bird:
+    imgs=bird_img
+    max_rotation=25
+    rotation_velocity=20
+    animation_time=5
+
+    def __init__(self,x,y):
+        self.x=x
+        self.y=y
+        self.height=self.y
+        self.images=self.imgs[0]
+    
+    def jump(self):
+        self.vel=-10.5
+        self.height=self.y
+
+    def move(self):
+        pass
+
+
+while True:
+    Bird.move()
+    
