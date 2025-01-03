@@ -61,11 +61,16 @@ class Bird:
     def __init__(self,x,y):
         self.x=x
         self.y=y
+        self.tilt=0
+        self.tick_count=0
+        self.vel=0
         self.height=self.y
+        self.img_count=0
         self.images=self.imgs[0]
     
     def jump(self):
         self.vel=-10.5
+        self.tick_count=0
         self.height=self.y
 
     def move(self):
