@@ -89,3 +89,12 @@ class Bird:
             d -= 2
 
         self.y=self.y+d
+
+
+        # tilting in upward position
+
+        if d<0 or self.y < self.height + 50:
+            if self.tilt < self.max_rotation:
+                self.tilt=self.max_rotation
+        
+        
