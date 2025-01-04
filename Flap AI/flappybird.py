@@ -74,9 +74,18 @@ class Bird:
         self.height=self.y
 
     def move(self):
-        self.tick += 1
+        self.tick_count+= 1
 
+        d=self.vel*self.tick_count + 1.5*self.tick_count**2
 
-while True:
-    Bird.move()
-    
+        # -10.5*1+1.5*1=-7,-4,-2,0
+        # this equation will set up a parabolic path for motion of 
+        # bird to move upward motion until it reaches at top
+
+        if d>=16:
+            d=16
+        
+        if d<0:
+            d -= 2
+
+        self.y=self.y+d
