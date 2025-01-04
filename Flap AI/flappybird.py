@@ -9,7 +9,7 @@ import random
 WIN_HEIGHT=600
 WIN_WIDTH=800
 
-Bird_img=[
+bird_img=[
 
     pygame.transform.scale2x(
     pygame.image.load(os.path.join('Flap AI\imgs','bird1.png'))
@@ -34,13 +34,11 @@ Pipe_img=[
 ]
 
 
-background_img=[
+background_img = pygame.transform.scale2x(
+    pygame.image.load(os.path.join('Flap AI\imgs', 'bg.png'))
+)
 
-    pygame.transform.scale2x(
-    pygame.image.load(os.path.join('Flap AI\imgs','bg.png'))
-                            )
 
-]
 
 base_img=[
 
@@ -126,4 +124,31 @@ class Bird:
             sels.img_count = self.animation_time*2
         
         rotated_image=pygame.transform.rotate(self.img,self.tilt)
+        new_rect = rotated_image.get_rect(center=self.img.get_rect(topleft=(self.x,self.y)).center)
+        win.blit(rotated_image,new_rect.topleft)
 
+
+    def get_mask(self):
+        return pygame.mask.from_surface(self.img)
+
+
+def draw_window(win,bird):
+    win.blit(background_img,(0,0))
+    bird.draw(win)
+    pygame.display.update()
+
+def main():
+    bird =Bird(200,200)
+    win=pygame.display.set_mode((WIN_WIDTH,WIN_HEIGHT))
+    run=True
+    while run:
+        for event in pygame.event.get():
+            if event.type==pygame.QUIT:
+                run=False
+
+        draw_window(win,bird)
+    
+    pygame.quit()
+    quit()
+
+main()
