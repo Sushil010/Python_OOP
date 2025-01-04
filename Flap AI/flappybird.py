@@ -66,7 +66,7 @@ class Bird:
         self.vel=0
         self.height=self.y
         self.img_count=0
-        self.images=self.imgs[0]
+        self.img=self.imgs[0]
     
     def jump(self):
         self.vel=-10.5
@@ -97,4 +97,33 @@ class Bird:
             if self.tilt < self.max_rotation:
                 self.tilt=self.max_rotation
         
+        else:
+            if self.tilt> -90:
+                self.tilt -= self.rotation_velocity
+
+
+    def draw(self,win):
+        self.img_count+=1
+
+        if self.img_count<self.animation_time:
+            self.img=self.imgs[0]
+
+        elif self.img_count<self.animation_time * 2:
+            self.img=self.imgs[1]
+
+        elif self.img_count<self.animation_time * 3:
+            self.img=self.imgs[2]
         
+        elif self.img_count<self.animation_time * 4:
+            self.img=self.imgs[1]
+        
+        elif self.img_count<self.animation_time * 4 + 1:
+            self.img=self.imgs[0]
+            self.img_count=0
+        
+        if self.tilt <= -80:
+            self.img =self.imgs[1]
+            sels.img_count = self.animation_time*2
+        
+        rotated_image=pygame.transform.rotate(self.img,self.tilt)
+
