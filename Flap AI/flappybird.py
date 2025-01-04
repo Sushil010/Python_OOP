@@ -74,7 +74,7 @@ class Bird:
         self.height=self.y
 
     def move(self):
-        pass
+        self.tick += 1
 
 
 while True:
