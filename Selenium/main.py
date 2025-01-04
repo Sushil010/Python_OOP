@@ -10,9 +10,9 @@ driver=webdriver.Chrome(service=service)
 driver.get("https://www.google.com")
 
 
-text_box=driver.find_element(By.NAME,value="gLFyf")
-text_box.send_keys("Selenium")
+text_box=driver.find_element(By.CLASS_NAME,value="gLFyf")
+text_box.send_keys("Selenium"+Keys.ENTER)
 
-time.sleep(15)
+time.sleep(5)
 
 driver.quit()
