@@ -13,7 +13,7 @@ driver=webdriver.Chrome(service=service)
 # Search Portion
 driver.get("https://www.google.com")
 
-WebdriverWait(driver,5).until(
+WebDriverWait(driver,5).until(
     EC.presence_of_element_located((By.CLASS_NAME,"gLFyf"))
 )
 
@@ -23,15 +23,20 @@ text_box.send_keys("cookie clicker"+Keys.ENTER)
 
 
 # Finding Link portion
-Webdriver.wait(driver,5).until(
-    EC.presence_of_element_located((BY.PARTIAL_LINK_TEXT,"Cookie Clicker"))
+WebDriverWait(driver,5).until(
+    EC.presence_of_element_located((By.PARTIAL_LINK_TEXT,"Cookie Clicker"))
 )
 
-cookie_link=driver.find_element(BY.PARTIAL_LINK_TEXT,"Cookie Clicker")
+cookie_link=driver.find_element(By.PARTIAL_LINK_TEXT,"Cookie Clicker")
 cookie_link.click()
 
 
-
+# selecting_language from pop up
+WebDriverWait(driver,10).until(
+    EC.presence_of_element_located((By.ID,"langSelect-EN"))
+)
+lang=driver.find_element(By.ID,value="langSelect-EN")
+lang.click()
 
 
 
