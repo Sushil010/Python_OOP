@@ -25,16 +25,16 @@ text_box.clear()
 
 
 # Below command will append what's written in input box
-text_box.send_keys("Sushil010 github"+Keys.ENTER)
+text_box.send_keys("youtube"+Keys.ENTER)
 
 
 
 
 WebDriverWait(driver,5).until(
-    EC.presence_of_element_located((By.PARTIAL_LINK_TEXT,"Sushil010"))
+    EC.presence_of_element_located((By.PARTIAL_LINK_TEXT,"youtube"))
 )
 #find the links and clicks on the link provided 
-link=driver.find_element(By.PARTIAL_LINK_TEXT,"Sushil010")
+link=driver.find_element(By.PARTIAL_LINK_TEXT,"youtube")
 link.click()
 
 time.sleep(5)
