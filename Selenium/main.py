@@ -25,18 +25,23 @@ text_box.clear()
 
 
 # Below command will append what's written in input box
-text_box.send_keys("youtube"+Keys.ENTER)
+text_box.send_keys("chatgpt"+Keys.ENTER)
 
 
 
 
 WebDriverWait(driver,5).until(
-    EC.presence_of_element_located((By.PARTIAL_LINK_TEXT,"youtube"))
+    EC.presence_of_element_located((By.PARTIAL_LINK_TEXT,"chatgpt"))
 )
 #find the links and clicks on the link provided 
-link=driver.find_element(By.PARTIAL_LINK_TEXT,"youtube")
+link=driver.find_element(By.PARTIAL_LINK_TEXT,"chatgpt")
 link.click()
 
-time.sleep(5)
+
+# texter=driver.find_element(By.ID,"prompt-textarea")
+# texter.clear()
+# texter.send_keys("Hello, how are you?"+Keys.ENTER)
+
+time.sleep(90)
 
 driver.quit()
