@@ -17,8 +17,6 @@ WebDriverWait(driver,5).until(
     EC.presence_of_element_located((By.CLASS_NAME,"gLFyf"))
 )
 
-
-
 text_box=driver.find_element(By.CLASS_NAME,value="gLFyf")
 
 
@@ -27,10 +25,17 @@ text_box.clear()
 
 
 # Below command will append what's written in input box
-text_box.send_keys("Selenium"+Keys.ENTER)
+text_box.send_keys("Sushil010 github"+Keys.ENTER)
 
 
 
+
+WebDriverWait(driver,5).until(
+    EC.presence_of_element_located((By.PARTIAL_LINK_TEXT,"Sushil010"))
+)
+#find the links and clicks on the link provided 
+link=driver.find_element(By.PARTIAL_LINK_TEXT,"Sushil010")
+link.click()
 
 time.sleep(5)
 
