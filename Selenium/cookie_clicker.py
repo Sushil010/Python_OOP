@@ -44,7 +44,7 @@ lang.click()
 WebDriverWait(driver,10).until(
     EC.presence_of_element_located((By.ID,"bigCookie"))
 )
-for cookie in range(100):
+for cookie in range(10):
     cookie_id=driver.find_element(By.ID,value="bigCookie")
     cookie_id.click()
     # time.sleep(0.1)
@@ -53,13 +53,20 @@ for cookie in range(100):
 # cookie_id.click()
 
 # check no of cookies
-cookie_count=driver.find_element(By.ID,value="cookies")
-print(cookie_count.text())
+cookie_count=driver.find_element(By.ID,value="cookies").text.split(" ")[0]
+cookie_count=int(cookie_count.replace(",",""))
+print(cookie_count)
 
 # buy items
 cursor=driver.find_element(By.ID,value="product0")
-cursor_price=driver.find_element(By.ID,value="productPrice0")
-cursor_number=driver.find_element(By.ID,value="productOwned0")
+
+cursor_price=driver.find_element(By.ID,value="productPrice0").text.split(" ")[0]
+cursor_price=int(cursor_price.replace(",",""))
+
+cursor_number=driver.find_element(By.ID,value="productOwned0").text.split(" ")[0]
+cursor_number=int(cursor_number.replace(",",""))
+
+
 
 # while(cookie_count<5):
 #     # if(cookie_count > cursor_price):
