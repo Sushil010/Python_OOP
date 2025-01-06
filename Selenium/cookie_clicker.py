@@ -32,7 +32,7 @@ cookie_link.click()
 
 
 # selecting_language from pop up
-WebDriverWait(driver,10).until(
+WebDriverWait(driver,2).until(
     EC.presence_of_element_located((By.ID,"langSelect-EN"))
 )
 lang=driver.find_element(By.ID,value="langSelect-EN")
@@ -40,7 +40,7 @@ lang.click()
 
 
 while True:
-    WebDriverWait(driver, 10).until(
+    WebDriverWait(driver, 2).until(
         EC.element_to_be_clickable((By.ID, "bigCookie"))
     )
     cookie_id = driver.find_element(By.ID, "bigCookie")
@@ -67,32 +67,3 @@ time.quit()
 
 
 
-
-
-# Clicking on the cookie
-# WebDriverWait(driver,10).until(
-#     EC.presence_of_element_located((By.ID,"bigCookie"))
-# )
-
-
-# cookie_id=driver.find_element(By.ID,value="bigCookie")
-# for cookie in range(10):
-#     cookie_id=driver.find_element(By.ID,value="bigCookie")
-#     cookie_id.click()
-    
-# cookie_id=driver.find_element(By.ID,value="bigCookie")
-# cookie_id.click()
-
-# check no of cookies
-# cookie_count=driver.find_element(By.ID,value="cookies").text.split(" ")[0]
-# cookie_count=int(cookie_count.replace(",",""))
-# print(cookie_count)
-
-# buy items
-# cursor=driver.find_element(By.ID,value="product0")
-
-# cursor_price=driver.find_element(By.ID,value="productPrice0").text.split(" ")[0]
-# cursor_price=int(cursor_price.replace(",",""))
-
-# cursor_number=driver.find_element(By.ID,value="productOwned0")
-# print(cursor_number)
