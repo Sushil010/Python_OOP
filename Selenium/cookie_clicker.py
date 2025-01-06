@@ -40,6 +40,37 @@ lang.click()
 
 
 
+
+while True:
+    WebDriverWait(driver, 10).until(
+        EC.element_to_be_clickable((By.ID, "bigCookie"))
+    )
+    cookie_id = driver.find_element(By.ID, "bigCookie")
+    cookie_id.click()
+
+    cookie_count = driver.find_element(By.ID, "cookies").text.split(" ")[0]
+    cookie_count = int(cookie_count.replace(",", ""))
+
+    for i in range(4):
+        product = driver.find_element(By.ID, f"product{i}")
+        product_price = driver.find_element(By.ID, f"productPrice{i}").text.split(" ")[0]
+
+        if not product_price.isdigit():
+            continue
+
+        product_price = int(product_price.replace(",", ""))
+
+        if cookie_count >= product_price:
+            product.click()
+            break
+
+time.sleep(50)
+time.quit()
+
+
+
+
+
 # Clicking on the cookie
 # WebDriverWait(driver,10).until(
 #     EC.presence_of_element_located((By.ID,"bigCookie"))
@@ -67,43 +98,3 @@ lang.click()
 
 # cursor_number=driver.find_element(By.ID,value="productOwned0")
 # print(cursor_number)
-
-
-
-
-while True:
-    WebDriverWait(driver, 10).until(
-        EC.element_to_be_clickable((By.ID, "bigCookie"))
-    )
-    cookie_id = driver.find_element(By.ID, "bigCookie")
-    cookie_id.click()
-
-    cookie_count = driver.find_element(By.ID, "cookies").text.split(" ")[0]
-    cookie_count = int(cookie_count.replace(",", ""))
-
-    for i in range(4):
-        product = driver.find_element(By.ID, f"product{i}")
-        product_price = driver.find_element(By.ID, f"productPrice{i}").text.split(" ")[0]
-
-        if not product_price.isdigit():
-            continue
-
-        product_price = int(product_price.replace(",", ""))
-
-        if cookie_count >= product_price:
-            product.click()
-            break
-
-
-
-
-    
-
-
-
-
-
-
-
-time.sleep(50)
-time.quit()
