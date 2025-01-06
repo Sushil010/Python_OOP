@@ -54,16 +54,17 @@ for cookie in range(100):
 
 # check no of cookies
 cookie_count=driver.find_element(By.ID,value="cookies")
+print(cookie_count.text())
 
 # buy items
 cursor=driver.find_element(By.ID,value="product0")
 cursor_price=driver.find_element(By.ID,value="productPrice0")
 cursor_number=driver.find_element(By.ID,value="productOwned0")
 
-while(cookie_count<5):
-    # if(cookie_count > cursor_price):
-    #     cursor.click()
-    cursor.click()
+# while(cookie_count<5):
+#     # if(cookie_count > cursor_price):
+#     #     cursor.click()
+#     cursor.click()
 
 
 
