@@ -39,8 +39,6 @@ lang=driver.find_element(By.ID,value="langSelect-EN")
 lang.click()
 
 
-
-
 while True:
     WebDriverWait(driver, 10).until(
         EC.element_to_be_clickable((By.ID, "bigCookie"))
