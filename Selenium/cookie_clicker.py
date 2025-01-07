@@ -41,6 +41,10 @@ lang.click()
 
 
 
+# Loop to click on cookie and buy products
+# It will click on cookie and buy products whenever it has enough cookies
+# It will buy the first product that it can afford
+
 
 while True:
     WebDriverWait(driver, 2).until(
