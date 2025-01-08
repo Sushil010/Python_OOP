@@ -17,7 +17,9 @@ def main():
     while True:
         quit_game()
         config.win.fill((0,0,0))
-        pygame.display.update()
+        config.ground.draw(config.win)
+        
         clock.tick(60)
+        pygame.display.flip()
 
 main()
